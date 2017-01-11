@@ -1,4 +1,4 @@
-FROM postgres:9.5
+FROM postgres:9.6
 MAINTAINER sebastien.beau@akretion.com
 
 COPY dev-docker-entrypoint.sh /
