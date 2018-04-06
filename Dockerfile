@@ -1,4 +1,4 @@
-FROM postgres:9.5
+FROM postgres:10
 MAINTAINER sebastien.beau@akretion.com
 
 RUN DEBIAN_FRONTEND=noninteractive && \
