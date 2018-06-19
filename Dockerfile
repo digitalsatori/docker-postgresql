@@ -9,7 +9,9 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 
 COPY dev-docker-entrypoint.sh /
 COPY initdb.sh /docker-entrypoint-initdb.d/initdb.sh
+COPY postgresql.conf /etc/postgresql/postgresql.conf
+RUN chown postgres:postgres /etc/postgresql/postgresql.conf
 ENTRYPOINT ["/dev-docker-entrypoint.sh"]
 
 EXPOSE 5432
-CMD ["postgres"]
+CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
